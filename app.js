@@ -1,25 +1,22 @@
-const http = require('http')
+const express = require('express')
 
-const server = http.createServer((req, res) => {
-    if (req.url === '/') {
-        if (req.method === "GET") {
-            console.log('It is a GET request')
-        } else if (req.method === 'POST') {
-            console.log('It is a POST request')
-        } else {
-            console.log('It is just another request')
-        }
-        res.write('You are at the homepage ')
-    res.end();
-    } else if (req.url === ('/another')) {
-        res.write('I am from another route ')
-    res.end();
-    }
-    else{
-    res.write('I am listening to your requests ')
-    res.end();}
+
+const app = express();
+
+app.get('/', (req, res, next) => {
+    console.log(req.url)
+    console.log(req.method)
+    res.send("Our server now runs on express js")
 })
 
-server.listen(3000, () => {
-    console.log('Our server will be at port 3000')
+app.post('/', (req, res, next) => {
+    
 })
+
+app.delete('/', (req, res, next) => {
+    
+})
+
+app.listen(3000, () => {
+    console.log('Server started at port 3000');
+});
