@@ -13,5 +13,5 @@ PATCH http://localhost:3000/products/id
 DELETE http://localhost:3000/products/id
 
 
-###
+### GET a page rather than products or specific product page
 GET http://localhost:3000/
