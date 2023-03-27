@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended: true}))
 //username 'john_dba'
 //Password 'lCxzTxao2ACCqX8q'
 
-mongoose.connect('mongodb+srv://cluster0.4nbnqlj.mongodb.net/?retryWrites=true&w=majority/RestAPI_Products', {
+mongoose.connect('mongodb+srv://cluster0.4nbnqlj.mongodb.net/', {
     dbName: 'RestAPI_Products',
     user: 'john_dba',
     pass: 'lCxzTxao2ACCqX8q',
