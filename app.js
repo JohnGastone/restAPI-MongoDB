@@ -3,9 +3,11 @@ const mongoose = require('mongoose')
 
 const app = express();
 
-// mongodb+srv://john_dba:<password>@cluster0.4nbnqlj.mongodb.net/?retryWrites=true&w=majority
+// Server URL 'mongodb+srv://john_dba:<password>@cluster0.4nbnqlj.mongodb.net/?retryWrites=true&w=majority'
+//username 'john_dba'
+//Password 'lCxzTxao2ACCqX8q'
 
-mongoose.connect('mongodb://localhost:27017/RestAPI_Products', {
+mongoose.connect('mongodb+srv://john_dba:lCxzTxao2ACCqX8q@cluster0.4nbnqlj.mongodb.net/?retryWrites=true&w=majority/RestAPI_Products', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
