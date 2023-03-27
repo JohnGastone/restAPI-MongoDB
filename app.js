@@ -7,7 +7,10 @@ const app = express();
 //username 'john_dba'
 //Password 'lCxzTxao2ACCqX8q'
 
-mongoose.connect('mongodb+srv://john_dba:lCxzTxao2ACCqX8q@cluster0.4nbnqlj.mongodb.net/?retryWrites=true&w=majority/RestAPI_Products', {
+mongoose.connect('mongodb+srv://cluster0.4nbnqlj.mongodb.net/?retryWrites=true&w=majority/RestAPI_Products', {
+    dbName: 'RestAPI_Products',
+    user: 'john_dba',
+    pass: 'lCxzTxao2ACCqX8q',
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
