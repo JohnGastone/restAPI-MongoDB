@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 
 const app = express();
 
+// mongodb+srv://john_dba:<password>@cluster0.4nbnqlj.mongodb.net/?retryWrites=true&w=majority
+
 mongoose.connect('mongodb://localhost:27017/RestAPI_Products', {
     useNewUrlParser: true,
     useUnifiedTopology: true
