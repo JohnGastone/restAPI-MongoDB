@@ -3,6 +3,9 @@ const mongoose = require('mongoose')
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({extended: true}))
+
 // Server URL 'mongodb+srv://john_dba:<password>@cluster0.4nbnqlj.mongodb.net/?retryWrites=true&w=majority'
 //username 'john_dba'
 //Password 'lCxzTxao2ACCqX8q'
@@ -17,13 +20,15 @@ mongoose.connect('mongodb+srv://cluster0.4nbnqlj.mongodb.net/?retryWrites=true&w
     console.log('Mongodb connected...')
 })
 
-app.all('/test/:id/:name', (req, res) => {    
+app.all('/test', (req, res) => {    
     // console.log(req.query.name)
     // console.log(req.query)
     // console.log(req.query.price)
     // res.send(req.query)
-    console.log(req.params)
-    res.send(req.params)
+    // console.log(req.params)
+    // res.send(req.params)
+    console.log(req.body);
+    res.send(req.body);
 })
 
 const ProductRoute = require('./routes/products.route')

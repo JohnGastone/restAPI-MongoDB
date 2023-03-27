@@ -17,5 +17,20 @@ DELETE http://localhost:3000/products/id
 ### GET a page rather than products or specific product page
 GET http://localhost:3000/
 
-### Test request
+### Test request - GET
 GET http://localhost:3000/test/5454/parachichi
+
+### Test request - POST {application/json}
+POST http://localhost:3000/test
+Content-Type: application/json
+
+{
+    "name" : "Parachichi",
+    "price" : 500
+}
+
+### Form URL-encoded
+POST http://localhost:3000/test
+Content-Type: application/x-www-form-urlencoded
+
+name=parachichi&price=500
