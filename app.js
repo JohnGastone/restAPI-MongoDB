@@ -17,6 +17,15 @@ mongoose.connect('mongodb+srv://cluster0.4nbnqlj.mongodb.net/?retryWrites=true&w
     console.log('Mongodb connected...')
 })
 
+app.all('/test/:id/:name', (req, res) => {    
+    // console.log(req.query.name)
+    // console.log(req.query)
+    // console.log(req.query.price)
+    // res.send(req.query)
+    console.log(req.params)
+    res.send(req.params)
+})
+
 const ProductRoute = require('./routes/products.route')
 app.use('/products', ProductRoute)
 

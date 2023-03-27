@@ -16,3 +16,6 @@ DELETE http://localhost:3000/products/id
 
 ### GET a page rather than products or specific product page
 GET http://localhost:3000/
+
+### Test request
+GET http://localhost:3000/test/5454/parachichi
