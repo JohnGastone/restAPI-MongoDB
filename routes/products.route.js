@@ -8,20 +8,32 @@ router.get('/', (req, res, next) => {
     res.send('A response from express router')
 })
 
-router.post('/', (req, res, next) => {
-    const product = new Product(
-    {
-        name: req.body.name,
-        price: req.body.price
-        })
-    product.save()
-        .then(result => {
-            console.log(result);
-            res.send(result)
-        })
-        .catch(err => {
-            console.log(err.message);
-    })
+router.post('/', async (req, res, next) => {
+    // Saving a product using async & wait
+    try {
+        const product = new Product(req.body)
+        const result = await product.save()
+        res.send(result)
+    } catch (error) {
+        console.log(error.message);
+    }
+    
+    
+    //const product = new Product(
+    // {
+    //     name: req.body.name,
+    //     price: req.body.price
+    //     })
+    // Saving a product using promises
+    // product.save()
+    //     .then(result => {
+    //         console.log(result);
+    //         res.send(result)
+    //     })
+    //     .catch(err => {
+    //         console.log(err.message);
+    // })
+
     res.send('Some products created')
 })
 
