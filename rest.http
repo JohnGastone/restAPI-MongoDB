@@ -13,8 +13,14 @@ Content-Type: application/json
 ### GET product by its id
 GET http://localhost:3000/products/642167d70092e4ebb0037a21
 
-### PATCH product by id
-PATCH http://localhost:3000/products/id
+### UPDATE a product by its id
+PATCH http://localhost:3000/products/642167d70092e4ebb0037a21
+Content-Type: application/json
+
+{
+    "name": "Embe sindano ya Morogoro",
+    "price" : 210
+}
 
 ### DELETE product by id
 DELETE http://localhost:3000/products/64252d6d133cc77ef620f648

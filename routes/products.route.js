@@ -58,8 +58,18 @@ router.get('/:id', async(req, res, next) => {
 })
 
 // Update a product by its id
-router.patch('/:id', (req, res, next) => {
-    res.send('Update a specific product by its id')
+router.patch('/:id', async(req, res, next) => {
+    try {
+        const id = req.params.id
+        const updates = req.body
+        const options = {new : true}
+
+        const result = await Product.findByIdAndUpdate(id, updates, options)
+        res.send(result)
+    } catch (error) {
+        console.log(error.message)
+        
+    }
 })
 
 // Delete a product by its id
