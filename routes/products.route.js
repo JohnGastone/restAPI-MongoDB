@@ -7,7 +7,7 @@ const Product = require('../models/product.model')
 router.get('/', async (req, res, next) => {    
     //res.send('Getting a list of all products')
     try {
-        const results = await Product.find({}, {name: 1, _id : 0, price : 1})
+        const results = await Product.find({}, {name: 1, _id : 1, price : 1})
         res.send(results)
     } catch (error)
     {
@@ -46,8 +46,14 @@ router.post('/', async (req, res, next) => {
 })
 
 // Get a product by its id
-router.get('/:id', (req, res, next) => {
-    res.send('Get a specific product by its id')
+router.get('/:id', async(req, res, next) => {
+    const id = req.params.id
+    try {
+        const product = await Product.findById(id)
+        res.send(product)
+    } catch (error) {
+        console.log(error.message)
+    }
 })
 
 // Update a product by its id
