@@ -66,7 +66,8 @@ router.patch('/:id', (req, res, next) => {
 router.delete('/:id', async (req, res, next) => {
     const id = req.params.id
     try {
-        const product = await Product.deleteOne({ _id: id })
+        const product = await Product.findByIdAndDelete(id)
+        //const product = await Product.deleteOne({ _id: id })
         res.send(product)
     } catch (error) {
         console.log(error.message)
