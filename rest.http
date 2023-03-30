@@ -10,7 +10,7 @@ Content-Type: application/json
     "name" : "Viazi mviringo vya Iringa",
     "price" : 7000
 }
-### GET product by id
+### GET product by its id
 GET http://localhost:3000/products/id
 
 ### PATCH product by id

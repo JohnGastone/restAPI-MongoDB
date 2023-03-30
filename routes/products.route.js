@@ -7,7 +7,7 @@ const Product = require('../models/product.model')
 router.get('/', async (req, res, next) => {    
     //res.send('Getting a list of all products')
     try {
-        const results = await Product.find({price: 550}, {name: 1, _id : 0, price : 1})
+        const results = await Product.find({}, {name: 1, _id : 0, price : 1})
         res.send(results)
     } catch (error)
     {
