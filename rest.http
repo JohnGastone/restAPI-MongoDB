@@ -1,4 +1,5 @@
 // Password 'lCxzTxao2ACCqX8q'
+###
 GET http://localhost:3000/products
 
 ### Create a product
