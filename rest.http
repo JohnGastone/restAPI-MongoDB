@@ -7,8 +7,8 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name" : "Hiliki ya Morogoro", 
-    "price" : 7000
+    "name" : "Parachichi la Mbeya", 
+    "price" : 550
 }
 ### GET product by its id
 GET http://localhost:3000/products/642167d70092e4ebb0037a21
@@ -17,7 +17,7 @@ GET http://localhost:3000/products/642167d70092e4ebb0037a21
 PATCH http://localhost:3000/products/id
 
 ### DELETE product by id
-DELETE http://localhost:3000/products/id
+DELETE http://localhost:3000/products/642167930092e4ebb0037a1d
 
 
 ### GET a page rather than products or specific product page

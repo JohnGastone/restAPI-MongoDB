@@ -50,7 +50,7 @@ router.get('/:id', async(req, res, next) => {
     const id = req.params.id
     try {
         //const product = await Product.findById(id)
-        const product = await Product.findOne({__id: id})
+        const product = await Product.findOne({ _id: id });
         res.send(product)
     } catch (error) {
         console.log(error.message)
@@ -63,7 +63,14 @@ router.patch('/:id', (req, res, next) => {
 })
 
 // Delete a product by its id
-router.delete('/:id', (req, res, next) => {
-    res.send('Delete a specific product by its id')
+router.delete('/:id', async (req, res, next) => {
+    const id = req.params.id
+    try {
+        const product = await Product.deleteOne({ _id: id })
+        res.send(product)
+    } catch (error) {
+        console.log(error.message)
+        
+    }
 })
 module.exports = router;
