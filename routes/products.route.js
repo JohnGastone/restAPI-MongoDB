@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const createError = require('http-errors')
 
 const Product = require('../models/product.model')
 
@@ -15,9 +16,8 @@ router.get('/', async (req, res, next) => {
     }
 })
 
-
-router.post('/', async (req, res, next) => {
-    // Saving a product using async & wait
+// Saving a product using async & wait
+router.post('/', async (req, res, next) => {    
     try {
         const product = new Product(req.body)
         const result = await product.save()
@@ -51,10 +51,13 @@ router.get('/:id', async(req, res, next) => {
     try {
         const product = await Product.findById(id)
         //const product = await Product.findOne({ _id: id });
-        console.log(product)
+        if (!product) {
+            throw createError(404, 'Product does not exist')
+        }
         res.send(product)
     } catch (error) {
-        console.log(error.message)
+        //console.log(error.message)
+        next(error)
     }
 })
 
