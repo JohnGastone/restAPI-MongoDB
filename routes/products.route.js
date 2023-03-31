@@ -74,7 +74,13 @@ router.patch('/:id', async(req, res, next) => {
 
         const result = await Product.findByIdAndUpdate(id, updates, options)
         res.send(result)
+        if (!result) {
+            throw createError(400, 'Product does not exist')
+        }
     } catch (error) {
+        if (error instanceof mongoose.CastError) {
+           return next(createError(400, 'Invalid product ID'))
+        }
         console.log(error.message)
         
     }
@@ -93,7 +99,7 @@ router.delete('/:id', async (req, res, next) => {
     } catch (error) {
         //console.log(error.message)
         if (error instanceof mongoose.CastError) {
-            next(createError(400, 'Invalid product ID'))
+           return  next(createError(400, 'Invalid product ID'))
         }
         next(error)
         

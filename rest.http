@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 ### DELETE product by id
-DELETE http://localhost:3000/products/64216b302504cddb3743fd2b
+DELETE http://localhost:3000/products/642738e2d5e85ab115117456
 
 
 ### GET a page rather than products or specific product page
