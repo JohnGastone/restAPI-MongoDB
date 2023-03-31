@@ -49,8 +49,9 @@ router.post('/', async (req, res, next) => {
 router.get('/:id', async(req, res, next) => {
     const id = req.params.id
     try {
-        //const product = await Product.findById(id)
-        const product = await Product.findOne({ _id: id });
+        const product = await Product.findById(id)
+        //const product = await Product.findOne({ _id: id });
+        console.log(product)
         res.send(product)
     } catch (error) {
         console.log(error.message)
