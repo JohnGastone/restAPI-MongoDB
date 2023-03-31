@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const createError = require('http-errors')
+const mongoose = require('mongoose')
 
 const Product = require('../models/product.model')
 
@@ -57,6 +58,9 @@ router.get('/:id', async(req, res, next) => {
         res.send(product)
     } catch (error) {
         //console.log(error.message)
+        if (error instanceof mongoose.castError) {
+            next(createError(400, 'Invalid product ID'))
+        }
         next(error)
     }
 })
