@@ -86,9 +86,16 @@ router.delete('/:id', async (req, res, next) => {
     try {
         const product = await Product.findByIdAndDelete(id)
         //const product = await Product.deleteOne({ _id: id })
-        res.send(product)
+        if (!result) {
+            throw createError(404, 'Product does not exist')
+        }
+        res.send(result)
     } catch (error) {
-        console.log(error.message)
+        //console.log(error.message)
+        if (error instanceof mongoose.castError) {
+            next(createError(400, 'Invalid product ID'))
+        }
+        next(error)
         
     }
 })
