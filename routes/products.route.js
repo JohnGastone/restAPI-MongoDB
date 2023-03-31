@@ -92,7 +92,7 @@ router.delete('/:id', async (req, res, next) => {
         res.send(result)
     } catch (error) {
         //console.log(error.message)
-        if (error instanceof mongoose.castError) {
+        if (error instanceof mongoose.CastError) {
             next(createError(400, 'Invalid product ID'))
         }
         next(error)
