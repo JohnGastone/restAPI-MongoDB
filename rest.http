@@ -14,7 +14,7 @@ Content-Type: application/json
 GET http://localhost:3000/products/642167d70092e4ebb0057a21
 
 ### UPDATE a product by its id
-PATCH http://localhost:3000/products/643cdc0a3ec10376aaa7960e
+PATCH http://localhost:3000/products/643cdc0a3ec10376aaa79e
 Content-Type: application/json
 
 {    
