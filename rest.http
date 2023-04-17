@@ -7,8 +7,8 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name" : "Parachichi la Mbeya", 
-    "price" : 550
+    "name" : "Nazi za Mkuranga", 
+    "price" : 500
 }
 ### GET product by its id
 GET http://localhost:3000/products/642167d70092e4ebb0057a21
