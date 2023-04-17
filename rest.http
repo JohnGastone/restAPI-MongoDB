@@ -14,11 +14,11 @@ Content-Type: application/json
 GET http://localhost:3000/products/642167d70092e4ebb0057a21
 
 ### UPDATE a product by its id
-PATCH http://localhost:3000/products/64216926a10fabbd852bf8e0
+PATCH http://localhost:3000/products/643cdc0a3ec10376aaa7960e
 Content-Type: application/json
 
 {    
-    "price" : 210
+    "price" : 600
 }
 
 ### DELETE product by id
