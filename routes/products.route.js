@@ -72,11 +72,11 @@ router.patch('/:id', async(req, res, next) => {
         const updates = req.body
         const options = {new : true}
 
-        const result = await Product.findByIdAndUpdate(id, updates, options)
-        res.send(result)
+        const result = await Product.findByIdAndUpdate(id, updates, options);
         if (!result) {
             throw createError(404, 'Product does not exist')
         }
+        res.send(result);
     } catch (error) {
         if (error instanceof mongoose.CastError) {
            return next(createError(400, 'Invalid product ID'))
