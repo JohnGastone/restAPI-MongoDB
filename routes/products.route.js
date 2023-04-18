@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
     }
 })
 
-// Saving a product using async & wait
+// Creating a product using async & wait
 router.post('/', async (req, res, next) => {    
     try {
         const product = new Product(req.body)
@@ -25,6 +25,11 @@ router.post('/', async (req, res, next) => {
         res.send(result)
     } catch (error) {
         console.log(error.message);
+        if (error.name === 'ValidationError') {
+            next(createError(422, error.message))
+            return
+        }
+        next(error)
     }
     
     
