@@ -20,7 +20,7 @@ Content-Type: application/json
     "price" : 600
 }
 
-### DELETE product by id
+### DELETE a product by id
 DELETE http://localhost:3000/products/642738e2d5e85ab115117456
 
 
